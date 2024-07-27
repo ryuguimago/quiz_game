@@ -6,11 +6,10 @@ x = 0
 y = 0
 z = 0
 #Frage variablen in listen
-Frage = ["Wie heißt die Hauptstadt von Italien? \n","Wer war der erste Mensch, der mit einem Raumschiff um die Erde flog? \n","Wie heißt die einflussreiche Kunstschule in Weimar? \n" ]
-Antwort1 = ["Mailand", "Neil Armstrong", "Bauhof"]
-Antwort2 = ["Madrid", "Lance Armstrong", "Baywa"]
-AntwortRichtig = ["Rom", "Yuri Gagarin", "Bauhaus"]
-#Fragen und antworten müssen eig zusammen gehören shuffle möglich
+Frage = ["Wie heißt die Hauptstadt von Italien? \n","Wer war der erste Mensch, der mit einem Raumschiff um die Erde flog? \n","Wie heißt die einflussreiche Kunstschule in Weimar? \n","Welches ist der größte Ozean der Welt?\n", "Welches Tier hat grün gefärbtes Fett?\n"]
+Antwort1 = ["Mailand", "Neil Armstrong", "Bauhof", "Nordsee", "Faultier"]
+Antwort2 = ["Madrid", "Lance Armstrong", "Baywa", "Atlantischer Ozean", "Schlange"]
+AntwortRichtig = ["Rom", "Yuri Gagarin", "Bauhaus", "Pazifischer Ozean", "Krokodil"]
 print("<Hallo, hast du lust auf ein Quiz? ")
 start = input("y/n \n") 
 if start.lower() == "y":
@@ -20,7 +19,6 @@ else:
     exit()
 print(f"Hallo {name} lass uns anfangen.\n")
 sleep(1)
-#hier sowas wie eine for schleife einfügen mit zählerder automatisiert die fragen und antworten durch wechselt
 print("Los geht es mit der ersten Frage \n\n")
 sleep(1)
 for AR in AntwortRichtig:

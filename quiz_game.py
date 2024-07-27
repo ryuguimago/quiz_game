@@ -3,7 +3,7 @@ x = 0
 y = 0
 print("<Hallo, hast du lust auf ein Quiz? ")
 start = input("y/n \n") 
-if start == "y" or start == "Y":
+if start.lower() == "y":
     name = input("Super, wie heißt du? \n")
 else:
     print("Schade")
