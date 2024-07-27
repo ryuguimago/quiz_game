@@ -68,7 +68,7 @@ sleep(1)
 #auswertung
 prozent = x / y * 100
 if x == y:
-    print("SUPER, du hast alle Fragen richtig beantwortet! \nDas sind", round(prozent) , "%")
+    print("SUPER, du hast alle Fragen richtig beantwortet! \n")
 else:
     print("Du hast ", x," von ", y," Fragen richtig beantwortet\nDas sind", round(prozent) , "%")
 exit()
