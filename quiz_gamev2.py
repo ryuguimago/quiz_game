@@ -2,8 +2,8 @@
 from time import sleep 
 import random
 #zähl variablen 
-x = 0
-y = 0
+x = 0 #richtige antworten
+y = 0 #anzahl fragen
 #Fragen
 quiz = [
     {
@@ -61,11 +61,11 @@ for q in quiz:
         x += 1
     else:
         print(f"SCHADE, die richtige Antwort wäre {q["richtig"]} gewesen\n")
-    # print("Nächste Frage: \n")
     sleep (1)
 #ende des quiz
 print("DAS WARS")
 sleep(1)
+#auswertung
 prozent = x / y * 100
 if x == y:
     print("SUPER, du hast alle Fragen richtig beantwortet! \nDas sind", round(prozent) , "%")
