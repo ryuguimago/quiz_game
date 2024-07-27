@@ -4,12 +4,34 @@ import random
 #zähl variablen 
 x = 0
 y = 0
-z = 0
-#Frage variablen in listen
-Frage = ["Wie heißt die Hauptstadt von Italien? \n","Wer war der erste Mensch, der mit einem Raumschiff um die Erde flog? \n","Wie heißt die einflussreiche Kunstschule in Weimar? \n","Welches ist der größte Ozean der Welt?\n", "Welches Tier hat grün gefärbtes Fett?\n"]
-Antwort1 = ["Mailand", "Neil Armstrong", "Bauhof", "Nordsee", "Faultier"]
-Antwort2 = ["Madrid", "Lance Armstrong", "Baywa", "Atlantischer Ozean", "Schlange"]
-AntwortRichtig = ["Rom", "Yuri Gagarin", "Bauhaus", "Pazifischer Ozean", "Krokodil"]
+#Fragen
+quiz = [
+    {
+        "frage": "Wie heißt die Hauptstadt von Italien?\n",
+        "antworten": ["Rom", "Mailand", "Madrid"],
+        "richtig": "Rom"
+    },
+    {
+        "frage": "Wer war der erste Mensch, der mit einem Raumschiff um die Erde flog?\n",
+        "antworten": ["Yuri Gagarin", "Neil Armstrong", "Lance Armstrong"],
+        "richtig": "Yuri Gagarin"
+    },
+    {
+        "frage": "Wie heißt die einflussreiche Kunstschule in Weimar?\n",
+        "antworten": ["Bauhaus", "Bauhof", "Baywa"],
+        "richtig": "Bauhaus"
+    },
+    {
+        "frage": "Welches ist der größte Ozean der Welt?\n",
+        "antworten": ["Nordsee", "Atlantischer Ozean", "Pazifischer Ozean"],
+        "richtig": "Pazifischer Ozean"
+    },
+    {
+        "frage": "Welches Tier hat grün gefärbtes Fett?\n",
+        "antworten": ["Faultier", "Schlange", "Krokodil"],
+        "richtig": "Krokodil"
+    }
+]
 print("<Hallo, hast du lust auf ein Quiz? ")
 start = input("y/n \n") 
 if start.lower() == "y":
@@ -21,25 +43,25 @@ print(f"Hallo {name} lass uns anfangen.\n")
 sleep(1)
 print("Los geht es mit der ersten Frage \n\n")
 sleep(1)
-for AR in AntwortRichtig:
+for q in quiz:
     y += 1
-    print(Frage[z])
+    print(q["frage"])
     sleep(1)
-    antworten = [AntwortRichtig[z], Antwort1[z], Antwort2[z]]
+    #Antworten mischen
+    antworten = q["antworten"]
     random.shuffle(antworten)
     print(f"A: {antworten[0]}")
     print(f"B: {antworten[1]}")
     print(f"C: {antworten[2]}")
     Lösung = input("Wie lautet die richtige Antwort?\n")
-    if  (Lösung.lower() == "a" and antworten[0] == AntwortRichtig[z]) or \
-        (Lösung.lower() == "b" and antworten[1] == AntwortRichtig[z]) or \
-        (Lösung.lower() == "c" and antworten[2] == AntwortRichtig[z]):
+    if  (Lösung.lower() == "a" and antworten[0] == q["richtig"] )or \
+        (Lösung.lower() == "b" and antworten[1] == q["richtig"]) or \
+        (Lösung.lower() == "c" and antworten[2] == q["richtig"]):
         print("RICHTIG\n")
         x += 1
     else:
-        print(f"SCHADE, die richtige Antwort wäre {AntwortRichtig[z]} gewesen\n")
+        print(f"SCHADE, die richtige Antwort wäre {q["richtig"]} gewesen\n")
     # print("Nächste Frage: \n")
-    z +=1 
     sleep (1)
 #ende des quiz
 print("DAS WARS")
